@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1" style="background: red; height: 200px;">1</div>
+    <div class="box box2" style="background: blue;  height: 200px;">2</div>
+    <div class="box box3" style="background: orange;  height: 200px;">3</div>
+    <div class="box box3" style="background: orange;  height: 240px;">3</div>
+    <div class="box box3" style="background: orange;  height: 290px;">3</div>
+    <div class="box box3" style="background: orange;  height: 200px;">3</div>
+    <div class="box box3" style="background: orange;  height: 200px;">3</div>
+    <div class="box box3" style="background: orange;  height: 200px;">3</div>
+    <div class="box box3" style="background: orange;  height: 200px;">3</div>
+    <div style="clear: both;"></div>
+  </div>
+</body>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    height: 100%;
+    overflow: auto;
+    width: 1200px;
+    background: pink;
+    margin: 0 auto;
+    min-height: 2000px;
+    columns: 4 0px;
+    -webkit-colums-rule: 0 none;
+  }
+  .container .box {
+    -webkit-column-break-after: avoid;
+    margin-bottom: 30px;
+    width: auto !important;
+  }
+
+</style>
+</html>

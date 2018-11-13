@@ -1,0 +1,107 @@
+/* 样式重置 */
+*
+  margin: 0
+  padding: 0
+
+ul
+  list-style: none
+
+
+/* 工具样式 */
+html
+  height: 100%
+  overflow: hidden
+
+body
+  color: #979497
+  height: 100%
+.fr
+  float: right
+
+.fl
+  float: left
+
+.clearfix::after
+  content: ""
+  display: block
+  line-height: 0
+  height: 0
+  visibility: hidden
+  clear: both
+
+.tc 
+  display: block
+  margin: 0 auto
+  text-align: center
+  transform: translateY(-50%)
+  -webkit-transform: translateY(-50%)
+  -moz-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  -o-transform: translateY(-50%)
+
+.mc
+  margin: 0 auto
+
+.pointer
+  cursor: pointer
+
+.mask
+  position: absolute
+  width: 100%
+  height: 100%
+  background: rgba(0,0,0, .7)
+/* —————————————————————————————————元素共有的样式——————————————————————————————————————— */
+// block-item
+.block_item
+ box-sizing: border-box
+ width: 100%
+ padding-top: 30px
+ .icon-wenzhang1
+    font-size: 40px
+    width: 40px
+    display: block
+    margin: 0 auto;
+    transform: translateY(-30%) rotate(35deg)
+
+.block_item .class, .block_item time
+  display: block
+  font-size: 12px
+  text-align: center
+.block_item .class
+  margin-bottom: 14px
+
+.block_item time
+ margin-bottom: 20px;
+
+.block_item .title
+  font-size: 16px
+  text-align: center
+  margin-bottom: 12px
+
+.block_item .sketch
+  font-size: 12px
+  padding: 0 20px
+  line-height: 20px
+  text-indent: 2em
+  margin-bottom: 25px
+
+.block_item .readAll
+  font-size: 12px
+  margin: 0 auto 20px
+  padding: 0 12px
+  width: 70px
+  height: 25px
+  line-height: 25px
+  text-align: center
+  cursor: pointer
+.block_item
+  .operate
+    height: 46px
+    box-sizinig: border-box
+    border-top: 1px solid #d2cfd2
+    display: flex
+    justify-content: space-around
+    align-items: center
+    color: #9c9a9d
+    i
+      font-size: 14px
