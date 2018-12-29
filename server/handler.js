@@ -15,8 +15,11 @@ module.exports = async (ctx, renderer, template) => {
     // const { title } = context.meta.inject()
 
     // console.log('---',context.renderStyles(),'---')
+
+    // console.log(context.getPreloadFiles())
     const html = ejs.render(template, {
       appString,
+      resourceHints: context.renderResourceHints(),
       style: context.renderStyles(),
       scripts: context.renderScripts(),
       // title: title.text(),

@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/development.js",
+    "server:dev": "cross-env NODE_ENV=development nodemon server/server.js",
+    "server:prod": "cross-env NODE_ENV=production node server/server.js",
     "build:client": "cross-env NODE_ENV=production webpack --config webpack/production.js",
-    "build:server": "cross-env NODE_ENV=dev webpack --config webpack/server.js",
-    "server": "cross-env NODE_ENV=development nodemon server/server"
+    "build:server": "cross-env NODE_ENV=development webpack --config webpack/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,9 @@
     "ejs": "^2.6.1",
     "koa": "^2.6.2",
     "koa-router": "^7.4.0",
+    "koa-send": "^5.0.0",
+    "mavon-editor": "^2.6.17",
+    "particles.js": "^2.0.0",
     "perfect-scrollbar": "^1.4.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
@@ -32,10 +36,10 @@
     "html-webpack-plugin": "^4.0.0-beta.4",
     "memory-fs": "^0.4.1",
     "mini-css-extract-plugin": "^0.4.4",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
-    "url-loader": "^1.1.0",
+    "url-loader": "^1.1.2",
     "vue-loader": "^15.3.0",
     "vue-server-renderer": "^2.5.17",
     "vue-style-loader": "^4.1.2",

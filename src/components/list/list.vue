@@ -1,6 +1,6 @@
 <template>
   <scroll class="block">
-    <div ref="wrapper" class="container">
+    <div ref="wrapper" class="container" style="display: none">
       <div class="list" ref="content">
         <t-block :txt="item"  v-for="(item, index) in data" :key="index" class="item"/>
         <m-block  class="item"/>
@@ -31,6 +31,7 @@ export default {
   },
   data () {
     return {
+      listShow: false,
       column: 3,
       columnWidth: 303.33333,
       columnGap: 20,
@@ -50,14 +51,15 @@ export default {
   mounted() {
     this.items = document.getElementsByClassName('block_item')
     this.flag = true
+    this.listShow = true
+    this.$refs.wrapper.style.display = 'block'
     this.waterFall()
-
+    
     window.addEventListener('resize', () => {
       if(!this.flag)
         return
       setTimeout(() => {
         this.waterFall()
-        
       }, 300)
     })
   },
@@ -84,6 +86,7 @@ export default {
 
       var max = this.getMin(true)
       this.$refs.wrapper.style.height = max.value + 'px'
+      
     },
     getMin(reversal = false) {
       var o = {
@@ -118,7 +121,6 @@ export default {
   .list
     position: relative
     margin: 0 auto
-    
     .item
       width: 303.33333px
       position: absolute

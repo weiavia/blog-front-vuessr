@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports =  {
   output: {
     path: absoluteDir('../public'),
-    filename: '[name]-[hash].js'
+    filename: '[name]-[hash].js',
+    publicPath: 'http://127.0.0.1:3333/public/'
   },
   module: {
     rules: [
@@ -22,22 +23,20 @@ module.exports =  {
         {
           test: /\.(gif|png|jpg)$/,
           use: {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-              limit: 8192,
-              name: 'images/[name]-[hash].[ext]',
-              publicPath: 'http://127.0.0.1:9000'
+              limit: 1024,
+              name: 'images/[name]-[hash].[ext]'
             }
           }
         },
         {
           test: /\.(woff|woff2|svg|eot|ttf)$/,
           use: {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               limit: 1024,
-              name: 'fonts/[name]-[hash].[ext]',
-              publicPath: 'http://127.0.0.1:9000'
+              name: 'fonts/[name]-[hash].[ext]'
             }
           }
         }

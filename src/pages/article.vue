@@ -1,6 +1,6 @@
 <template>
   <scroll class="article">
-    Article
+    
   </scroll>
 </template>
 
@@ -9,6 +9,7 @@ import Scroll from '@/components/scroll/scroll'
 export default {
   data () {
     return {
+      value: '123'
     };
   },
   components: {
@@ -19,7 +20,7 @@ export default {
 
 <style lang='sass' scoped>
   .article
-    background: #eee
+    background: rgba(255,255,255, .6)
     color: #333
     font-size: 100px
     text-align: center

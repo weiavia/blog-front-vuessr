@@ -2,6 +2,7 @@ import Router from 'vue-router'
 import Vue from 'vue'
 import Home from 'pages/home'
 import Article from 'pages/article'
+import Write from 'pages/write'
 import NotFoundComponent from 'pages/404'
 
 Vue.use(Router)
@@ -21,6 +22,10 @@ export default () => {
       {
         path: '/article',
         component: Article
+      },
+      {
+        path: '/write',
+        component: Write
       },
       { 
         path: '*', 
