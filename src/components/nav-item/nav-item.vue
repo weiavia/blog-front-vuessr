@@ -1,8 +1,10 @@
 <template>
-  <div class="item pointer" @mouseenter="showMask = true" @mouseleave="showMask = false">
-      <div class="mask" v-show="showMask"/>
-      <i class="iconfont" v-bind:class="icon"/>
-  </div>
+  <el-tooltip content="Top center" placement="top" :enterable="false">
+    <div class="item pointer" @mouseenter="showMask = true" @mouseleave="showMask = false">
+        <div class="mask" v-show="showMask"/>
+        <i class="iconfont" v-bind:class="icon"/>
+    </div>
+  </el-tooltip>
 </template>
 
 <script>
@@ -15,6 +17,9 @@ export default {
   },
   methods: {
 
+  },
+  components: {
+    
   }
 }
 </script>

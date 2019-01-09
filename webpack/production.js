@@ -2,9 +2,9 @@ const optimizeCssPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const VueClientPlugin = require('vue-server-renderer/client-plugin')
+const { absoluteDir } = require('./tool')
 var webpackMerge = require('webpack-merge')
 var base = require('./base')
-const { absoluteDir } = require('./tool')
 
 module.exports = webpackMerge(base, {
   mode: 'production',

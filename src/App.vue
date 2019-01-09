@@ -2,13 +2,18 @@
   <div style="width: 100%; height: 100%;">
     <div id="particles" class="particles"/>
     <div class="container clearfix" id="container">
-      
-      <div class="appShade"/>
+      <!-- <div class="appShade"/> -->
       <div class="fl main">
         <top />
-        <keep-alive>
-          <router-view class="content" />
-        </keep-alive>
+        <transition name="bounce" appear
+          appear-active-class="appear-active"
+          appear-to-class="appear-end"
+          appear-class="appear-start"
+        >
+          <keep-alive>
+            <router-view class="content" />
+          </keep-alive>
+        </transition>
       </div>
       <sidebar class="fr" />
     </div>
@@ -32,6 +37,18 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  .bounce-enter-active 
+    animation: fadeInUp .9s
+  .bounce-leave-active 
+    animation: rotateOut .5s
+
+  .appear-active
+    transition: opacity .5s
+  .appear-start
+    opacity: 0
+  .appear-end
+    opacity: 1
+
   .particles
     position: absolute
     width: 100%

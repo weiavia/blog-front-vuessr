@@ -4,9 +4,13 @@ import createRouter from './route/index'
 import 'common/style/normalize.css'
 import 'common/style/base.sass'
 
-import mavonEditor from 'mavon-editor'
-import 'mavon-editor/dist/css/index.css'
+import mavonEditor from 'mavon-editor-via'
+import 'mavon-editor-via/dist/css/index.css'
 Vue.use(mavonEditor)
+
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
 
 if(true) {
   require('common/skin/light.sass')

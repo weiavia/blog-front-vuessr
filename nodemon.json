@@ -8,7 +8,6 @@
     "build/webpack.config.client.js",
     "public",
     "package.json"
-
   ],
   "verbose": true,
   "env": {

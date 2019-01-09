@@ -1,6 +1,6 @@
 <template>
   <scroll class="block">
-    <div ref="wrapper" class="container" style="display: none">
+    <div ref="wrapper" class="container">
       <div class="list" ref="content">
         <t-block :txt="item"  v-for="(item, index) in data" :key="index" class="item"/>
         <m-block  class="item"/>
@@ -52,7 +52,6 @@ export default {
     this.items = document.getElementsByClassName('block_item')
     this.flag = true
     this.listShow = true
-    this.$refs.wrapper.style.display = 'block'
     this.waterFall()
     
     window.addEventListener('resize', () => {
