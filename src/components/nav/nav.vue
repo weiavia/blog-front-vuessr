@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
       <div class="list" :class="{hide: !showMore}">
-        <nav-item :icon='item.icon' v-for="(item, index) in items" :key="index"/>
+        <nav-item :item='item' :index='index' :current='current' v-for="(item, index) in items" :key="index" @click.native="select(index)"/>
       </div>
       <div class="more pointer" @click="showMore=!showMore">{{showMore ? 'hide' : 'more'}}</div>
   </div>
@@ -13,6 +13,7 @@ export default {
   data () {
     return {
       showMore: false,
+      current: 0,
       items: [
         {
           name: '大前端',
@@ -37,12 +38,21 @@ export default {
         {
           name: '音乐',
           icon: 'icon-yinle'
+        },
+        {
+          name: '所有的',
+          icon: 'icon-all'
         }
       ]
     };
   },
+  created() {
+    this.current = this.items.length - 1
+  },
   methods: {
-    
+    select(index) {
+      this.current = index
+    }
   },
   components: {
     navItem

@@ -16,8 +16,9 @@ export default (param) => {
         reject()
         return
       }
-
       resolve(res.data)
+    }).catch(() => {
+      reject()
     })
   })
 }

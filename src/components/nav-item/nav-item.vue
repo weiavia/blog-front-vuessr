@@ -1,15 +1,15 @@
 <template>
-  <el-tooltip content="Top center" placement="top" :enterable="false">
-    <div class="item pointer" @mouseenter="showMask = true" @mouseleave="showMask = false">
+  <el-tooltip :content="item.name" placement="top" :enterable="false">
+    <div class="item pointer" @mouseenter="showMask = true" @mouseleave="showMask = false" :class="{active: index === current}">
         <div class="mask" v-show="showMask"/>
-        <i class="iconfont" v-bind:class="icon"/>
+        <i class="iconfont" v-bind:class="item.icon"/>
     </div>
   </el-tooltip>
 </template>
 
 <script>
 export default {
-  props: ['icon', 'name'],
+  props: ['item', 'index', 'current'],
   data () {
     return {
       showMask: false
@@ -31,6 +31,12 @@ export default {
   background: rgba(255,255,255, .5)
   text-align: center
   position: relative
+  &.active
+    background: rgba(0,0,0, .5) !important
+    i
+      color: #fff
+    .mask
+      display: none
   .mask
     transition: all 3s
   i
