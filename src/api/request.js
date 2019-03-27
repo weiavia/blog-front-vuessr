@@ -12,12 +12,15 @@ export default (param) => {
     }).then((res) => {
       res = res.data
       if(res.errorNo > HAS_ERROR) {
-        vm.$message.error(`Api: ${res.errorMsg}`);
+        vm.$message.error(`Api: ErrorMsg:${res.errorMsg}   ErrorNo:${res.errorNo}`);
         reject()
         return
       }
       resolve(res.data)
-    }).catch(() => {
+    }).catch((error) => {
+      console.log(error.response.data)
+      // vm.$message.error(`Api: ${e.errorMsg}`);
+      // console.log(e.message)
       reject()
     })
   })

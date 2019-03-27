@@ -1,6 +1,6 @@
 <template>
   <div class="scroll" ref="container">
-      <slot />
+    <slot />
   </div>
 </template>
 
@@ -16,13 +16,15 @@ export default {
   },
   mounted() {
 		this.container = this.$refs.container
+		this.scroller = null
 		this.init()
 	},
 	methods: {
 		init() {
-			new PerfectScrollbar(this.container, {
-
-			})
+			this.scroller = new PerfectScrollbar(this.container, {})
+		},
+		refresh() {
+			this.scroller.update()
 		}
 	}
 }

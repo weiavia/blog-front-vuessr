@@ -4,10 +4,12 @@ import createRouter from './route/index'
 import 'common/style/normalize.css'
 import 'common/style/base.sass'
 
+// 引入 mkdown
 import mavonEditor from 'mavon-editor-via'
 import 'mavon-editor-via/dist/css/index.css'
 Vue.use(mavonEditor)
 
+// 引入 element ui库
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)

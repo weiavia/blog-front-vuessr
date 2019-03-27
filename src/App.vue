@@ -15,7 +15,7 @@
           </keep-alive>
         </transition>
       </div>
-      <sidebar class="fr" />
+      <!-- <sidebar class="fr" /> -->
     </div>
   </div>
 </template>
@@ -41,21 +41,19 @@ export default {
     animation: fadeInUp .9s
   .bounce-leave-active 
     animation: rotateOut .5s
-
   .appear-active
     transition: opacity .5s
   .appear-start
     opacity: 0
   .appear-end
     opacity: 1
-
+    
   .particles
     position: absolute
     width: 100%
     height: 100%
     left: 0
     top: 0
-
   .container
     box-sizing: border-box
     height: 100%
@@ -64,9 +62,12 @@ export default {
     margin: 0 auto
     padding: 0 15px
     position: relative
+    display: flex
+    justify-content: space-between
     .content
       height: calc(100% - 50px)
     .main
       width: calc(100% - 320px)
       height: 100%
+      flex-grow: 1
 </style>

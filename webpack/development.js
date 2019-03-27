@@ -11,7 +11,7 @@ module.exports = webpackMerge(base, {
   output: {
     path: absoluteDir('../public/'),
     filename: '[name]-[hash].js',
-    publicPath: 'http://127.0.0.1:9000/'
+    publicPath: 'http://127.0.0.1:3001/'
   },
   module: {
     rules: [
@@ -36,7 +36,7 @@ module.exports = webpackMerge(base, {
   },
   devServer: {
     host: '0.0.0.0',
-    port: 9000,
+    port: 3001,
     hot: true,
     historyApiFallback: true,
     // publicPath: '/'

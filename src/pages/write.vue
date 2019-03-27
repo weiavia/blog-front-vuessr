@@ -8,7 +8,6 @@
       :boxShadow="boxShadow"
       :toolbars="toolbars"
       :ishljs = "ishljs"
-      codeStyle="atelier-dune-dark"
       placeholder="烹羊宰牛且为乐，会须一饮三百杯"
       :toolbarsFlag="toolbarsFlag"
       @save="save"
@@ -18,7 +17,7 @@
 
 <script>
 import toolbars from '@/config/editor'
-import {write} from '@/api/block'
+import { write } from '@/api/block'
 
 export default {
   data () {
@@ -41,16 +40,15 @@ export default {
   methods: {
     async save(v, r) {
       let data = {
-        text: r,
+        content: v,
         title: this.title,
-        described: this.described
+        subTitle: this.described
       }
-
+      this.value = v + 1
       this.loading = true
-      try {
-        let res = await write(data)
-        this.$message('save ok');
-      } catch(e) {}
+
+      await write(data)
+      this.$message('save ok');
       this.loading = false
     }
   }
@@ -80,6 +78,4 @@ export default {
        width: 100%
   .v-note-wrapper
     height: calc(100% - 100px)
-
-
 </style>
